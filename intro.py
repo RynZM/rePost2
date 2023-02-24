@@ -1,15 +1,9 @@
-import sys
+from PIL import Image
 
-print(sys.version)
-print(sys.executable)
+import pytesseract
+pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
 
-def greet(who_to_greet):
-    greeting = 'Hello, {}'.format(who_to_greet)
-    return greeting 
 
-print (greet('World'))
-print (greet('Ryan'))
 
-for x in "banana":
-    print(x)
+print(pytesseract.image_to_string(Image.open('C:\\Users\\RyanZ\\OneDrive\\Documents\\Coding\\rePost\\Python\\rePost2\\image.jpg')))
